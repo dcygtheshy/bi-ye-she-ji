@@ -273,6 +273,8 @@ const handleMenuSelect = (index) => {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  height: auto !important;
+  padding: 0 !important;
 }
 
 .menu-item-custom::before {
@@ -296,13 +298,15 @@ const handleMenuSelect = (index) => {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 4px 8px;
+  padding: 12px 16px;
+  width: 100%;
 }
 
 .menu-icon {
   font-size: 22px;
   color: var(--text-secondary);
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .menu-item-custom:hover .menu-icon,
@@ -315,13 +319,16 @@ const handleMenuSelect = (index) => {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
 
 .menu-title {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .menu-desc {
@@ -329,6 +336,8 @@ const handleMenuSelect = (index) => {
   color: var(--text-secondary);
   font-weight: 400;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .menu-item-custom:hover {
@@ -340,10 +349,8 @@ const handleMenuSelect = (index) => {
 }
 
 .menu-item-custom.is-active .menu-title {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent-cyan);
+  font-weight: 700;
 }
 
 /* 侧边栏底部 */
